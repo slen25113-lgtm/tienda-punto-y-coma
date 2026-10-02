@@ -190,3 +190,66 @@ número (indicativo + celular, solo dígitos) el mensaje va directo a ese chat.
   según sus tarifas.
 - No tiene autenticación: el panel de pedidos es abierto, porque es una
   demostración académica en un servidor local.
+
+---
+
+## Base de datos (MySQL / MariaDB)
+
+El script está en [`base-de-datos/tienda_punto_y_coma.sql`](base-de-datos/tienda_punto_y_coma.sql).
+Crea la base, las tablas, las vistas, los datos de ejemplo y deja al final seis
+consultas de comprobación.
+
+### Cómo importarlo
+
+**Con XAMPP y phpMyAdmin**
+
+1. Inicia **Apache** y **MySQL** en el panel de XAMPP.
+2. Abre `http://localhost/phpmyadmin`.
+3. Pestaña **Importar** → **Seleccionar archivo** → elige `tienda_punto_y_coma.sql`.
+4. Pulsa **Continuar**. El script crea la base `tienda_punto_y_coma` desde cero.
+
+**Por consola**
+
+```bash
+mysql -u root -p < base-de-datos/tienda_punto_y_coma.sql
+```
+
+### Tablas
+
+| Tabla | Para qué sirve |
+|---|---|
+| `categorias` | Agrupa los productos (Cuadernos, Escritura, Dibujo técnico, Tecnología, Laboratorio) |
+| `productos` | Catálogo. La llave primaria es el código del producto (`CU-175`) |
+| `clientes` | Quién hace el pedido |
+| `pedidos` | Cabecera: número, entrega, totales y estado |
+| `pedido_detalle` | Líneas del pedido: producto, cantidad y precio del día |
+
+Dos vistas: `v_catalogo` (catálogo con el nombre de la categoría) y
+`v_pedidos_resumen` (pedidos con cliente, número de artículos y total).
+
+### Decisiones del modelo
+
+- **`DECIMAL` para el dinero**, nunca `FLOAT`: los números flotantes pierden
+  exactitud al sumar y eso en pesos se nota.
+- **El precio se copia en `pedido_detalle`**, porque si mañana sube el precio
+  del cuaderno, el pedido viejo debe conservar lo que se cobró ese día.
+- **Llaves foráneas con `RESTRICT`** en productos y clientes: no se puede
+  borrar un producto que ya aparece en un pedido. En `pedido_detalle` se usa
+  `CASCADE`, porque borrar un pedido sí debe borrar sus líneas.
+- **Restricciones `CHECK`**: cantidad entre 1 y 50, precio mayor que cero,
+  total igual a subtotal más entrega, y un domicilio no puede quedar sin
+  dirección.
+- **`subtotal` es columna generada**: la calcula el motor
+  (`cantidad * precio_unitario`), así nunca queda descuadrada.
+
+### Comprobación realizada
+
+El script se ejecutó completo en **MariaDB 11.4** sin errores: crea las 5
+tablas, inserta los 9 productos y los 2 pedidos de ejemplo, y las 6 consultas
+finales devuelven datos correctos (total vendido $69.600, el mismo que
+registra la aplicación).
+
+Las restricciones se probaron una por una y rechazan lo que deben rechazar:
+domicilio sin dirección, número de pedido repetido, total descuadrado,
+producto inexistente, cantidad cero, precio negativo, categoría inexistente y
+borrado de un producto con pedidos.
