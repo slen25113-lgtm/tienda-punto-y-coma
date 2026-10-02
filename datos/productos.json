@@ -1,0 +1,11 @@
+[
+  { "id": "CU-175",  "nombre": "Cuaderno argollado 5 materias", "especificacion": "175 hojas · cuadriculado 7 mm",  "precio": 18900, "categoria": "Cuadernos",       "dibujo": "cuaderno",     "existencias": 40 },
+  { "id": "CU-080",  "nombre": "Libreta de ingeniería",          "especificacion": "80 hojas · papel verde claro",   "precio": 14500, "categoria": "Cuadernos",       "dibujo": "ingenieria",   "existencias": 25 },
+  { "id": "ES-005",  "nombre": "Portaminas 0,5 mm",              "especificacion": "Incluye tubo de 12 minas HB",    "precio": 9800,  "categoria": "Escritura",       "dibujo": "portaminas",   "existencias": 60 },
+  { "id": "ES-R04",  "nombre": "Resaltadores × 4",               "especificacion": "Punta biselada de 1 a 5 mm",     "precio": 12900, "categoria": "Escritura",       "dibujo": "resaltadores", "existencias": 35 },
+  { "id": "DT-B18",  "nombre": "Block de dibujo 1/8",            "especificacion": "20 hojas · 120 g/m²",            "precio": 11200, "categoria": "Dibujo técnico",  "dibujo": "block",        "existencias": 18 },
+  { "id": "DT-R30",  "nombre": "Regla metálica 30 cm",           "especificacion": "Escala en milímetros y pulgadas","precio": 7500,  "categoria": "Dibujo técnico",  "dibujo": "regla",        "existencias": 22 },
+  { "id": "TE-C417", "nombre": "Calculadora científica",         "especificacion": "417 funciones · pila incluida",  "precio": 64900, "categoria": "Tecnología",      "dibujo": "calculadora",  "existencias": 12 },
+  { "id": "TE-U64",  "nombre": "Memoria USB 64 GB",              "especificacion": "USB 3.2 · llavero metálico",     "precio": 32000, "categoria": "Tecnología",      "dibujo": "usb",          "existencias": 15 },
+  { "id": "LB-BAT",  "nombre": "Bata de laboratorio",            "especificacion": "Tallas S a XL · algodón",        "precio": 58000, "categoria": "Laboratorio",     "dibujo": "bata",         "existencias": 20 }
+]

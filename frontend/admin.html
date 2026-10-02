@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedidos registrados — Punto &amp; Coma</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="shell panel">
+  <p class="demo"><b>PROTOTIPO ACADÉMICO</b> Panel de consulta. Lee los pedidos guardados por el backend.</p>
+
+  <header class="bar">
+    <a class="logo" href="index.html">Punto<span class="amp">&amp;</span>Coma<small>Pedidos registrados</small></a>
+    <a class="cart-link" href="index.html">Volver a la tienda</a>
+  </header>
+
+  <section class="hero" aria-labelledby="panel-title">
+    <p class="eyebrow">GET /api/pedidos</p>
+    <h1 id="panel-title">Pedidos que recibió el <mark>servidor</mark></h1>
+    <p class="lede">Esta página no guarda nada: consulta la API del backend y muestra lo que está en <code>datos/pedidos.json</code>. Sirve para comprobar que el pedido enviado desde la tienda quedó realmente registrado.</p>
+  </section>
+
+  <p class="resumen" id="resumen"><b>Cargando…</b></p>
+  <p class="estado" id="estado" role="status" hidden></p>
+
+  <div class="tabla-wrap" id="tabla-wrap" hidden>
+    <table class="pedidos">
+      <thead>
+        <tr>
+          <th>Pedido</th>
+          <th>Fecha</th>
+          <th>Cliente</th>
+          <th>Productos</th>
+          <th>Entrega</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    <span>Punto &amp; Coma · proyecto universitario sin fines comerciales</span>
+    <a href="index.html">Ir a la tienda</a>
+  </footer>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

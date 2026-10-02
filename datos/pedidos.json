@@ -1,0 +1,53 @@
+[
+  {
+    "numero": "PYC-000001",
+    "fecha": "2026-10-01T22:53:55.557Z",
+    "cliente": "Laura Gomez",
+    "entrega": "campus",
+    "direccion": "",
+    "nota": "Paso a las 10",
+    "items": [
+      {
+        "id": "CU-175",
+        "nombre": "Cuaderno argollado 5 materias",
+        "cantidad": 2,
+        "precioUnitario": 18900,
+        "subtotal": 37800
+      },
+      {
+        "id": "ES-R04",
+        "nombre": "Resaltadores × 4",
+        "cantidad": 1,
+        "precioUnitario": 12900,
+        "subtotal": 12900
+      }
+    ],
+    "subtotal": 50700,
+    "costoEntrega": 0,
+    "total": 50700,
+    "estado": "recibido",
+    "mensajeWhatsApp": "*Nuevo pedido · Punto & Coma*\nPedido: PYC-000001\nCliente: Laura Gomez\n\n• 2 × Cuaderno argollado 5 materias (CU-175) — $37.800\n• 1 × Resaltadores × 4 (ES-R04) — $12.900\n\nSubtotal: $50.700\nEntrega: Recoger en Bloque C, local 104\n*Total: $50.700*\nNota: Paso a las 10"
+  },
+  {
+    "numero": "PYC-000002",
+    "fecha": "2026-10-01T22:54:33.156Z",
+    "cliente": "Camila Rivera",
+    "entrega": "campus",
+    "direccion": "",
+    "nota": "",
+    "items": [
+      {
+        "id": "CU-175",
+        "nombre": "Cuaderno argollado 5 materias",
+        "cantidad": 1,
+        "precioUnitario": 18900,
+        "subtotal": 18900
+      }
+    ],
+    "subtotal": 18900,
+    "costoEntrega": 0,
+    "total": 18900,
+    "estado": "recibido",
+    "mensajeWhatsApp": "*Nuevo pedido · Punto & Coma*\nPedido: PYC-000002\nCliente: Camila Rivera\n\n• 1 × Cuaderno argollado 5 materias (CU-175) — $18.900\n\nSubtotal: $18.900\nEntrega: Recoger en Bloque C, local 104\n*Total: $18.900*"
+  }
+]

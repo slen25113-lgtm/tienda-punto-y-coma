@@ -1,0 +1,18 @@
+{
+  "name": "tienda-punto-y-coma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tienda en linea de la papeleria Punto & Coma: pagina de aterrizaje con backend de catalogo y pedidos, y envio del pedido por WhatsApp. Proyecto universitario.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
